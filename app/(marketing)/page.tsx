@@ -57,7 +57,7 @@ export default async function IndexPage() {
           <p className="max-w-[44rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
             Whether you&apos;re a content creator, influencer, business owner, or simply love sharing moments, Sociagram provides all you need to boost your engagement and expand your audience.
           </p>
-          <div className="space-x-4 mt-2">
+          <div className=" mt-2 space-x-4">
             <Link href="/login" className={cn(buttonVariants({ size: "lg", className: "font-semibold text-md" }))}>
               Get Started
             </Link>
@@ -75,7 +75,7 @@ export default async function IndexPage() {
 
       <section
         id="features"
-        className="container space-y-8 bg-slate-50 py-8 dark:bg-transparent md:py-12 lg:py-24 border-0 border-white"
+        className="container py-8 space-y-8 bg-slate-50 dark:bg-transparent md:py-12 lg:py-24 border-0 border-white"
       >
         <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-5 text-center">
           <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
@@ -202,7 +202,7 @@ export default async function IndexPage() {
                 href="https://play.google.com/store/apps/details?id=your_app_id"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center rounded-md px-3 py-3"
+                className="inline-flex items-center justify-center rounded-md p-3"
               >
                 <Image
                   src={GetItOnGooglePlay}
