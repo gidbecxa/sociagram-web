@@ -26,7 +26,7 @@ export default async function MarketingLayout({
                 "px-4"
               )}
             >
-              Login
+              Join the Waitlist
             </Link>
           </nav>
         </div>

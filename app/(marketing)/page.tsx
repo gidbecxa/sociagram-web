@@ -4,6 +4,10 @@ import { env } from "@/env.mjs"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
+import Image from "next/image"
+
+import GetItOnGooglePlay from "@/public/images/GetItOnGooglePlay_Badge_Web_color_English.png"
+import HomePageMockup from "@/public/images/1-dark.png"
 
 async function getGitHubStars(): Promise<string | null> {
   try {
@@ -37,133 +41,128 @@ export default async function IndexPage() {
 
   return (
     <>
-      <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">
-        <div className="container flex max-w-[64rem] flex-col items-center gap-4 text-center">
+      {/* hero */}
+      <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-28 border-0 border-white">
+        <div className="container flex max-w-[64rem] flex-col items-center gap-6 text-center">
           <Link
             href={siteConfig.links.twitter}
             className="rounded-2xl bg-muted px-4 py-1.5 text-sm font-medium"
             target="_blank"
           >
-            Follow along on Twitter
+            Follow us on Twitter
           </Link>
           <h1 className="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
-            An example app built using Next.js 13 server components.
+            Your Ultimate Companion for Viral Social Media Success
           </h1>
-          <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
-            I&apos;m building a web app with Next.js 13 and open sourcing
-            everything. Follow along as we figure this out together.
+          <p className="max-w-[44rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
+            Whether you're a content creator, influencer, business owner, or simply love sharing moments, Sociagram provides all you need to boost your engagement and expand your audience.
           </p>
-          <div className="space-x-4">
-            <Link href="/login" className={cn(buttonVariants({ size: "lg" }))}>
+          <div className="space-x-4 mt-2">
+            <Link href="/login" className={cn(buttonVariants({ size: "lg", className: "font-semibold text-md" }))}>
               Get Started
             </Link>
             <Link
-              href={siteConfig.links.github}
+              href={siteConfig.links.productHunt}
               target="_blank"
               rel="noreferrer"
-              className={cn(buttonVariants({ variant: "outline", size: "lg" }))}
+              className={cn(buttonVariants({ variant: "outline", size: "lg", className: "font-semibold text-md" }))}
             >
-              GitHub
+              Upvote on Product Hunt
             </Link>
           </div>
         </div>
       </section>
+
       <section
         id="features"
-        className="container space-y-6 bg-slate-50 py-8 dark:bg-transparent md:py-12 lg:py-24"
+        className="container space-y-8 bg-slate-50 py-8 dark:bg-transparent md:py-12 lg:py-24 border-0 border-white"
       >
-        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
+        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-5 text-center">
           <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
             Features
           </h2>
           <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-            This project is an experiment to see how a modern app, with features
-            like auth, subscriptions, API routes, and static pages would work in
-            Next.js 13 app dir.
+            Discover a couple of the essential tools Sociagram offers to help you engage with your audience and grow your social media presence.
           </p>
         </div>
-        <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
-          <div className="relative overflow-hidden rounded-lg border bg-background p-2">
-            <div className="flex h-[180px] flex-col justify-between rounded-md p-6">
-              <svg viewBox="0 0 24 24" className="h-12 w-12 fill-current">
-                <path d="M11.572 0c-.176 0-.31.001-.358.007a19.76 19.76 0 0 1-.364.033C7.443.346 4.25 2.185 2.228 5.012a11.875 11.875 0 0 0-2.119 5.243c-.096.659-.108.854-.108 1.747s.012 1.089.108 1.748c.652 4.506 3.86 8.292 8.209 9.695.779.25 1.6.422 2.534.525.363.04 1.935.04 2.299 0 1.611-.178 2.977-.577 4.323-1.264.207-.106.247-.134.219-.158-.02-.013-.9-1.193-1.955-2.62l-1.919-2.592-2.404-3.558a338.739 338.739 0 0 0-2.422-3.556c-.009-.002-.018 1.579-.023 3.51-.007 3.38-.01 3.515-.052 3.595a.426.426 0 0 1-.206.214c-.075.037-.14.044-.495.044H7.81l-.108-.068a.438.438 0 0 1-.157-.171l-.05-.106.006-4.703.007-4.705.072-.092a.645.645 0 0 1 .174-.143c.096-.047.134-.051.54-.051.478 0 .558.018.682.154.035.038 1.337 1.999 2.895 4.361a10760.433 10760.433 0 0 0 4.735 7.17l1.9 2.879.096-.063a12.317 12.317 0 0 0 2.466-2.163 11.944 11.944 0 0 0 2.824-6.134c.096-.66.108-.854.108-1.748 0-.893-.012-1.088-.108-1.747-.652-4.506-3.859-8.292-8.208-9.695a12.597 12.597 0 0 0-2.499-.523A33.119 33.119 0 0 0 11.573 0zm4.069 7.217c.347 0 .408.005.486.047a.473.473 0 0 1 .237.277c.018.06.023 1.365.018 4.304l-.006 4.218-.744-1.14-.746-1.14v-3.066c0-1.982.01-3.097.023-3.15a.478.478 0 0 1 .233-.296c.096-.05.13-.054.5-.054z" />
+        <div className="mx-auto grid justify-center gap-5 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
+          <div className="relative overflow-hidden rounded-xl border bg-background p-2">
+            <div className="flex h-[240px] flex-col justify-between rounded-md p-6">
+              <svg viewBox="0 0 24 24" className="h-16 w-16 fill-current">
+                <path fillRule="evenodd" clip-rule="evenodd" d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 13.5997 2.37562 15.1116 3.04346 16.4525C3.22094 16.8088 3.28001 17.2161 3.17712 17.6006L2.58151 19.8267C2.32295 20.793 3.20701 21.677 4.17335 21.4185L6.39939 20.8229C6.78393 20.72 7.19121 20.7791 7.54753 20.9565C8.88837 21.6244 10.4003 22 12 22ZM8 13.25C7.58579 13.25 7.25 13.5858 7.25 14C7.25 14.4142 7.58579 14.75 8 14.75H13.5C13.9142 14.75 14.25 14.4142 14.25 14C14.25 13.5858 13.9142 13.25 13.5 13.25H8ZM7.25 10.5C7.25 10.0858 7.58579 9.75 8 9.75H16C16.4142 9.75 16.75 10.0858 16.75 10.5C16.75 10.9142 16.4142 11.25 16 11.25H8C7.58579 11.25 7.25 10.9142 7.25 10.5Z" fill="currentColor"></path>
               </svg>
               <div className="space-y-2">
-                <h3 className="font-bold">Next.js 13</h3>
-                <p className="text-sm text-muted-foreground">
-                  App dir, Routing, Layouts, Loading UI and API routes.
+                <h3 className="font-bold md:text-lg">Engaging Captions</h3>
+                <p className="text-md text-muted-foreground">
+                  Find captivating captions for every occasion that resonate with your content.
                 </p>
               </div>
             </div>
           </div>
-          <div className="relative overflow-hidden rounded-lg border bg-background p-2">
-            <div className="flex h-[180px] flex-col justify-between rounded-md p-6">
-              <svg viewBox="0 0 24 24" className="h-12 w-12 fill-current">
-                <path d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38a2.167 2.167 0 0 0-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44a23.476 23.476 0 0 0-3.107-.534A23.892 23.892 0 0 0 12.769 4.7c1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442a22.73 22.73 0 0 0-3.113.538 15.02 15.02 0 0 1-.254-1.42c-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.345-.034-.46 0-.915.01-1.36.034.44-.572.895-1.096 1.345-1.565zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87a25.64 25.64 0 0 1-4.412.005 26.64 26.64 0 0 1-1.183-1.86c-.372-.64-.71-1.29-1.018-1.946a25.17 25.17 0 0 1 1.013-1.954c.38-.66.773-1.286 1.18-1.868A25.245 25.245 0 0 1 12 8.098zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933a25.952 25.952 0 0 0-1.345-2.32zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493a23.966 23.966 0 0 0-1.1-2.98c.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98a23.142 23.142 0 0 0-1.086 2.964c-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39a25.819 25.819 0 0 0 1.341-2.338zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143a22.005 22.005 0 0 1-2.006-.386c.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295a1.185 1.185 0 0 1-.553-.132c-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.345.034.46 0 .915-.01 1.36-.034-.44.572-.895 1.095-1.345 1.565-.455-.47-.91-.993-1.36-1.565z" />
+          <div className="relative overflow-hidden rounded-xl border bg-background p-2">
+            <div className="flex h-[240px] flex-col justify-between rounded-md p-6">
+              <svg viewBox="0 0 24 24" className="h-16 w-16 fill-current">
+                <path d="M10.6923 6L7.69231 19M6.38462 9.5H18.8847M16.1924 6L13.1924 19M5 15.5H17.5001" stroke="currentColor" strokeWidth="2" strokeLinecap="round"></path>
               </svg>
               <div className="space-y-2">
-                <h3 className="font-bold">React 18</h3>
-                <p className="text-sm">
-                  Server and Client Components. Use hook.
+                <h3 className="font-bold md:text-lg">Trending Hashtags</h3>
+                <p className="text-md text-muted-foreground">
+                  Boost your reach with curated trending hashtags for diverse topics and platforms.
                 </p>
               </div>
             </div>
           </div>
-          <div className="relative overflow-hidden rounded-lg border bg-background p-2">
-            <div className="flex h-[180px] flex-col justify-between rounded-md p-6">
-              <svg viewBox="0 0 24 24" className="h-12 w-12 fill-current">
-                <path d="M0 12C0 5.373 5.373 0 12 0c4.873 0 9.067 2.904 10.947 7.077l-15.87 15.87a11.981 11.981 0 0 1-1.935-1.099L14.99 12H12l-8.485 8.485A11.962 11.962 0 0 1 0 12Zm12.004 12L24 12.004C23.998 18.628 18.628 23.998 12.004 24Z" />
+          <div className="relative overflow-hidden rounded-xl border bg-background p-2">
+            <div className="flex h-[240px] flex-col justify-between rounded-md p-6">
+              <svg viewBox="0 0 24 24" className="h-16 w-16 fill-current">
+                <path d="M12.0016 21.9292C6.96156 21.9292 2.85156 17.8292 2.85156 12.7792V10.8992C2.85156 10.5092 3.17156 10.1992 3.55156 10.1992C3.93156 10.1992 4.25156 10.5192 4.25156 10.8992V12.7792C4.25156 17.0492 7.72156 20.5192 11.9916 20.5192C16.2616 20.5192 19.7316 17.0492 19.7316 12.7792V10.8992C19.7316 10.5092 20.0516 10.1992 20.4316 10.1992C20.8116 10.1992 21.1316 10.5192 21.1316 10.8992V12.7792C21.1516 17.8292 17.0416 21.9292 12.0016 21.9292Z" fill="currentColor"></path> <path d="M11.9984 2C8.63844 2 5.89844 4.74 5.89844 8.1V12.79C5.89844 16.15 8.63844 18.89 11.9984 18.89C15.3584 18.89 18.0984 16.15 18.0984 12.79V8.1C18.0984 4.74 15.3584 2 11.9984 2ZM14.1784 10.59C14.1084 10.86 13.8584 11.04 13.5884 11.04C13.5384 11.04 13.4784 11.03 13.4284 11.02C12.4084 10.74 11.3284 10.74 10.3084 11.02C9.97844 11.11 9.64844 10.92 9.55844 10.59C9.46844 10.27 9.65844 9.93 9.98844 9.84C11.2184 9.5 12.5184 9.5 13.7484 9.84C14.0784 9.93 14.2684 10.26 14.1784 10.59ZM15.0284 7.82C14.9384 8.07 14.7084 8.22 14.4584 8.22C14.3884 8.22 14.3184 8.21 14.2484 8.18C12.7184 7.62 11.0384 7.62 9.50844 8.18C9.18844 8.3 8.83844 8.14 8.71844 7.82C8.60844 7.51 8.76844 7.16 9.08844 7.04C10.8884 6.39 12.8684 6.39 14.6584 7.04C14.9784 7.16 15.1384 7.51 15.0284 7.82Z" fill="currentColor"></path>
               </svg>
               <div className="space-y-2">
-                <h3 className="font-bold">Database</h3>
-                <p className="text-sm text-muted-foreground">
-                  ORM using Prisma and deployed on PlanetScale.
+                <h3 className="font-bold md:text-lg">Content Discovery</h3>
+                <p className="text-md text-muted-foreground">
+                  Stay updated with the latest trends, viral challenges, and popular audios.
                 </p>
               </div>
             </div>
           </div>
-          <div className="relative overflow-hidden rounded-lg border bg-background p-2">
-            <div className="flex h-[180px] flex-col justify-between rounded-md p-6">
-              <svg viewBox="0 0 24 24" className="h-12 w-12 fill-current">
-                <path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z" />
+          <div className="relative overflow-hidden rounded-xl border bg-background p-2">
+            <div className="flex h-[240px] flex-col justify-between rounded-md p-6">
+              <svg viewBox="0 0 24 24" className="h-16 w-16 fill-current">
+                <path d="M16.9358 13.1007C17.804 12.7969 18.8834 12.756 21.1392 12.7508H22.7242C22.7167 12.859 22.7348 12.6434 22.7242 12.7508C22.6895 13.1321 22.5227 13.4894 22.2526 13.7608L13.7454 22.3107C13.4821 22.5754 13.1241 22.7242 12.7508 22.7242C12.6434 22.7348 12.859 22.7167 12.7508 22.7242V21.1392C12.756 18.8834 12.7969 17.804 13.1007 16.9358C13.7289 15.1405 15.1405 13.7289 16.9358 13.1007Z" fill="currentColor"></path> <path fillRule="evenodd" clip-rule="evenodd" d="M11.5515 16.8809C11.2763 17.9436 11.2521 19.2445 11.2501 21.22V22.7243C5.66292 22.3393 1.25 17.685 1.25 12C1.25 6.06294 6.06294 1.25 12 1.25C17.685 1.25 22.3393 5.66292 22.7243 11.2501H21.22C18.9634 11.2524 17.587 11.2837 16.4403 11.6849C14.6151 12.3236 13.1098 13.6152 12.1975 15.2866C12.1782 15.2885 12.1589 15.2911 12.1396 15.2945C11.0656 15.4824 10.0235 15.4383 9.09494 15.2056C8.69315 15.1049 8.2858 15.349 8.1851 15.7508C8.0844 16.1526 8.32847 16.5599 8.73026 16.6606C9.61622 16.8827 10.5717 16.9615 11.5515 16.8809ZM14.8977 11.2234C15.4311 11.0805 15.6898 10.3159 15.4754 9.51572C15.2609 8.71552 14.6547 8.18271 14.1212 8.32565C13.5877 8.4686 13.3291 9.23316 13.5435 10.0334C13.7579 10.8336 14.3642 11.3664 14.8977 11.2234ZM9.10225 12.7764C9.63571 12.6335 9.89436 11.8689 9.67994 11.0687C9.46553 10.2685 8.85925 9.73569 8.32579 9.87863C7.79232 10.0216 7.53368 10.7861 7.74809 11.5863C7.9625 12.3865 8.56878 12.9194 9.10225 12.7764Z" fill="currentColor"></path>
               </svg>
               <div className="space-y-2">
-                <h3 className="font-bold">Components</h3>
-                <p className="text-sm text-muted-foreground">
-                  UI components built using Radix UI and styled with Tailwind
-                  CSS.
+                <h3 className="font-bold md:text-lg">Pre-designed Templates</h3>
+                <p className="text-md text-muted-foreground">
+                  Filters, meme packs, effects, stickers, and text overlays to create eye-catching content.
                 </p>
               </div>
             </div>
           </div>
-          <div className="relative overflow-hidden rounded-lg border bg-background p-2">
-            <div className="flex h-[180px] flex-col justify-between rounded-md p-6">
+          <div className="relative overflow-hidden rounded-xl border bg-background p-2">
+            <div className="flex h-[240px] flex-col justify-between rounded-md p-6">
               <svg
                 viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1"
-                className="h-12 w-12 fill-current"
+                className="h-16 w-16 fill-current"
               >
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <path d="M8.50989 2.00001H15.49C15.7225 1.99995 15.9007 1.99991 16.0565 2.01515C17.1643 2.12352 18.0711 2.78958 18.4556 3.68678H5.54428C5.92879 2.78958 6.83555 2.12352 7.94337 2.01515C8.09917 1.99991 8.27741 1.99995 8.50989 2.00001Z" fill="currentColor"></path> <path d="M6.31052 4.72312C4.91989 4.72312 3.77963 5.56287 3.3991 6.67691C3.39117 6.70013 3.38356 6.72348 3.37629 6.74693C3.77444 6.62636 4.18881 6.54759 4.60827 6.49382C5.68865 6.35531 7.05399 6.35538 8.64002 6.35547H15.5321C17.1181 6.35538 18.4835 6.35531 19.5639 6.49382C19.9833 6.54759 20.3977 6.62636 20.7958 6.74693C20.7886 6.72348 20.781 6.70013 20.773 6.67691C20.3925 5.56287 19.2522 4.72312 17.8616 4.72312H6.31052Z" fill="currentColor"></path> <path fillRule="evenodd" clip-rule="evenodd" d="M15.3276 7.54204H8.67239C5.29758 7.54204 3.61017 7.54204 2.66232 8.52887C1.71447 9.5157 1.93748 11.0403 2.38351 14.0896L2.80648 16.9811C3.15626 19.3724 3.33115 20.568 4.22834 21.284C5.12553 22 6.4488 22 9.09534 22H14.9046C17.5512 22 18.8745 22 19.7717 21.284C20.6689 20.568 20.8437 19.3724 21.1935 16.9811L21.6165 14.0896C22.0625 11.0404 22.2855 9.51569 21.3377 8.52887C20.3898 7.54204 18.7024 7.54204 15.3276 7.54204ZM14.5812 15.7942C15.1396 15.4481 15.1396 14.5519 14.5812 14.2058L11.2096 12.1156C10.6669 11.7792 10 12.2171 10 12.9099V17.0901C10 17.7829 10.6669 18.2208 11.2096 17.8844L14.5812 15.7942Z" fill="currentColor"></path>
               </svg>
               <div className="space-y-2">
-                <h3 className="font-bold">Authentication</h3>
-                <p className="text-sm text-muted-foreground">
-                  Authentication using NextAuth.js and middlewares.
+                <h3 className="font-bold md:text-lg">Explore Videos</h3>
+                <p className="text-md text-muted-foreground">
+                  Get practical tips and see videos to create your viral post and grow your audience.
                 </p>
               </div>
             </div>
           </div>
-          <div className="relative overflow-hidden rounded-lg border bg-background p-2">
-            <div className="flex h-[180px] flex-col justify-between rounded-md p-6">
-              <svg viewBox="0 0 24 24" className="h-12 w-12 fill-current">
-                <path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C5.175 22.99 8.385 24 11.714 24c2.641 0 4.843-.624 6.328-1.813 1.664-1.305 2.525-3.236 2.525-5.732 0-4.128-2.524-5.851-6.594-7.305h.003z" />
+          <div className="relative overflow-hidden rounded-xl border bg-background p-2">
+            <div className="flex h-[240px] flex-col justify-between rounded-md p-6">
+              <svg viewBox="0 0 24 24" className="h-16 w-16 fill-current">
+                <path d="M16.8218 5.1344C16.0887 4.29394 15.648 3.19805 15.648 2H14.7293C14.9659 3.3095 15.7454 4.43326 16.8218 5.1344Z" fill="currentColor"></path> <path d="M8.3218 11.9048C6.73038 11.9048 5.43591 13.2004 5.43591 14.7931C5.43591 15.903 6.06691 16.8688 6.98556 17.3517C6.64223 16.8781 6.43808 16.2977 6.43808 15.6661C6.43808 14.0734 7.73255 12.7778 9.324 12.7778C9.62093 12.7778 9.90856 12.8288 10.1777 12.9124V9.40192C9.89927 9.36473 9.61628 9.34149 9.324 9.34149C9.27294 9.34149 9.22654 9.34614 9.1755 9.34614V12.0394C8.90176 11.9558 8.61873 11.9048 8.3218 11.9048Z" fill="currentColor"></path> <path d="M19.4245 6.67608V9.34614C17.6429 9.34614 15.9912 8.77501 14.6456 7.80911V14.7977C14.6456 18.2851 11.8108 21.127 8.32172 21.127C6.97621 21.127 5.7235 20.6998 4.69812 19.98C5.8534 21.2198 7.50049 22 9.32392 22C12.8083 22 15.6478 19.1627 15.6478 15.6707V8.68211C16.9933 9.64801 18.645 10.2191 20.4267 10.2191V6.78293C20.0787 6.78293 19.7446 6.74574 19.4245 6.67608Z" fill="currentColor"></path> <path d="M14.6456 14.7977V7.80911C15.9912 8.77501 17.6429 9.34614 19.4245 9.34614V6.67608C18.3945 6.45788 17.4899 5.90063 16.8218 5.1344C15.7454 4.43326 14.9704 3.3095 14.7245 2H12.2098L12.2051 15.7775C12.1495 17.3192 10.8782 18.5591 9.32393 18.5591C8.35884 18.5591 7.50977 18.0808 6.98085 17.3564C6.06219 16.8688 5.4312 15.9076 5.4312 14.7977C5.4312 13.205 6.72567 11.9094 8.31708 11.9094C8.61402 11.9094 8.90168 11.9605 9.17079 12.0441V9.35079C5.75598 9.42509 3 12.2298 3 15.6707C3 17.3331 3.64492 18.847 4.69812 19.98C5.7235 20.6998 6.97621 21.127 8.32172 21.127C11.8061 21.127 14.6456 18.2851 14.6456 14.7977Z" fill="currentColor"></path>
               </svg>
               <div className="space-y-2">
-                <h3 className="font-bold">Subscriptions</h3>
-                <p className="text-sm text-muted-foreground">
-                  Free and paid subscriptions using Stripe.
+                <h3 className="font-bold md:text-lg">Social Media Integration</h3>
+                <p className="text-md text-muted-foreground">
+                  Connect with your social media accounts, manage your profiles, track your growth
                 </p>
               </div>
             </div>
@@ -171,18 +170,18 @@ export default async function IndexPage() {
         </div>
         <div className="mx-auto text-center md:max-w-[58rem]">
           <p className="leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-            Taxonomy also includes a blog and a full-featured documentation site
-            built using Contentlayer and MDX.
+            We’re working hard to bring you a suite of powerful tools and features designed to help you become a social media star!
           </p>
         </div>
       </section>
+
       <section id="open-source" className="container py-8 md:py-12 lg:py-24">
         <div className="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">
           <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
-            Proudly Open Source
+            Create. Share. Grow.
           </h2>
           <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-            Taxonomy is open source and powered by open source software. <br />{" "}
+            Take the thrilling step to go viral on social media with Sociagram <br />{" "}
             The code is available on{" "}
             <Link
               href={siteConfig.links.github}
@@ -194,6 +193,36 @@ export default async function IndexPage() {
             </Link>
             .{" "}
           </p>
+
+          {/* Banner Section */}
+          <div className="container relative flex flex-col items-center rounded-xl bg-accent p-4 md:flex-row md:gap-4 md:items-stretch md:p-6 lg:p-8 my-4 md:my-6">
+            {/* CTA Text and Download Button */}
+            <div className="w-full flex items-center justify-center border-0 border-gray-500">
+              <Link
+                href="https://play.google.com/store/apps/details?id=your_app_id"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center rounded-md px-3 py-3"
+              >
+                <Image
+                  src={GetItOnGooglePlay}
+                  alt="Get it on Google Play"
+                  width={200}
+                  style={{ objectFit: "contain" }}
+                />
+              </Link>
+            </div>
+            {/* Mockup Image */}
+            <div className="mt-4 w-full max-w-sm md:mt-0 lg:max-w-md flex md:justify-center border-0 border-gray-500">
+              <Image
+                src={HomePageMockup}
+                alt="Get it on Google Play"
+                height={480}
+                style={{ objectFit: "contain" }}
+              />
+            </div>
+          </div>
+
           {stars && (
             <Link
               href={siteConfig.links.github}

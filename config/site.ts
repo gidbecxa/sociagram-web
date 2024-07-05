@@ -9,5 +9,6 @@ export const siteConfig: SiteConfig = {
   links: {
     twitter: "https://twitter.com/gbecsen",
     github: "https://github.com/gidbecxa/sociagram-web",
+    productHunt: "https://www.producthunt.com/",
   },
 }
