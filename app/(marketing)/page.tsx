@@ -55,7 +55,7 @@ export default async function IndexPage() {
             Your Ultimate Companion for Viral Social Media Success
           </h1>
           <p className="max-w-[44rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
-            Whether you're a content creator, influencer, business owner, or simply love sharing moments, Sociagram provides all you need to boost your engagement and expand your audience.
+            Whether you&apos;re a content creator, influencer, business owner, or simply love sharing moments, Sociagram provides all you need to boost your engagement and expand your audience.
           </p>
           <div className="space-x-4 mt-2">
             <Link href="/login" className={cn(buttonVariants({ size: "lg", className: "font-semibold text-md" }))}>
@@ -170,7 +170,7 @@ export default async function IndexPage() {
         </div>
         <div className="mx-auto text-center md:max-w-[58rem]">
           <p className="leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-            We’re working hard to bring you a suite of powerful tools and features designed to help you become a social media star!
+            We&apos;re working hard to bring you a suite of powerful tools and features designed to help you become a social media star!
           </p>
         </div>
       </section>
