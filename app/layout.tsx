@@ -31,7 +31,7 @@ export const metadata = {
   },
   description: siteConfig.description,
   keywords: [
-    "Next.js",
+    "Social Media",
     "React",
     "Tailwind CSS",
     "Server Components",
