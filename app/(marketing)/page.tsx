@@ -41,7 +41,8 @@ export default async function IndexPage() {
               Get Started
             </Link>
             <Link
-              href={siteConfig.links.productHunt}
+              // href={siteConfig.links.productHunt}
+              href="#"
               target="_blank"
               rel="noreferrer"
               className={cn(
@@ -235,7 +236,7 @@ export default async function IndexPage() {
             {/* CTA Text and Download Button */}
             <div className="flex w-full items-center justify-center border-0 border-gray-500">
               <Link
-                href="https://play.google.com/store/apps/details?id=your_app_id"
+                href="#"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center rounded-md p-3"

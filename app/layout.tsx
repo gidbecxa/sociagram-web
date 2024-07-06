@@ -32,15 +32,15 @@ export const metadata = {
   description: siteConfig.description,
   keywords: [
     'Social Media',
-    'React',
-    'Tailwind CSS',
-    'Server Components',
-    'Radix UI',
+    'Trending',
+    'Hashtags',
+    'Community',
+    'Viral',
   ],
   authors: [
     {
       name: 'Sociagram',
-      url: 'https://shadcn.com',
+      url: 'https://sociagramlive.vercel.app/',
     },
   ],
   creator: 'Sociagram',
