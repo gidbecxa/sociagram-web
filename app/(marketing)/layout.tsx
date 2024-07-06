@@ -1,10 +1,11 @@
-import Link from "next/link"
+import Link from 'next/link'
 
-import { marketingConfig } from "@/config/marketing"
-import { cn } from "@/lib/utils"
-import { buttonVariants } from "@/components/ui/button"
-import { MainNav } from "@/components/main-nav"
-import { SiteFooter } from "@/components/site-footer"
+import { marketingConfig } from '@/config/marketing'
+import { cn } from '@/lib/utils'
+import { buttonVariants } from '@/components/ui/button'
+import { MainNav } from '@/components/main-nav'
+// import { SiteFooter } from '@/components/site-footer'
+import { NewSiteFooter } from '@/components/new-site-footer'
 
 interface MarketingLayoutProps {
   children: React.ReactNode
@@ -20,10 +21,10 @@ export default async function MarketingLayout({
           <MainNav items={marketingConfig.mainNav} />
           <nav>
             <Link
-              href="/login"
+              href="/waitlist"
               className={cn(
-                buttonVariants({ variant: "secondary", size: "sm" }),
-                "px-4"
+                buttonVariants({ variant: 'secondary', size: 'sm' }),
+                'px-4'
               )}
             >
               Join the Waitlist
@@ -32,7 +33,7 @@ export default async function MarketingLayout({
         </div>
       </header>
       <main className="flex-1">{children}</main>
-      <SiteFooter />
+      <NewSiteFooter />
     </div>
   )
 }

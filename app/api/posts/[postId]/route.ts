@@ -12,7 +12,7 @@ const routeContextSchema = z.object({
 })
 
 export async function DELETE(
-  req: Request,
+  _req: Request,
   context: z.infer<typeof routeContextSchema>
 ) {
   try {
