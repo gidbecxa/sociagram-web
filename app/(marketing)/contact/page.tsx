@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: 'Contact the Sociagram Team',
 }
 
-export default function JoinWaitlistPage() {
+export default function ContactPage() {
   return (
     <div className="container flex h-screen w-screen flex-col items-center justify-center">
       <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
@@ -21,10 +21,27 @@ export default function JoinWaitlistPage() {
           </p>
         </div>
         <ContactForm />
-        <p className="px-8 text-center text-sm text-muted-foreground">
-          You can also email us directly at <br />{' '}
-          <a href="mailto:beyuppie365@gmail.com">beyuppie365@gmail.com</a>
-        </p>
+        <div className="text-center text-sm text-muted-foreground">
+          <p>
+            For account deletion requests, please use the subject &quot;Delete my
+            account&quot;. Specify the data you want to be deleted and any additional
+            instructions.
+          </p>
+          <p>
+            You can also email us directly at{' '}
+            <a href="mailto:beyuppie365@gmail.com" className="underline">
+              beyuppie365@gmail.com
+            </a>
+          </p>
+          <p className="mt-4 text-xs">
+            Please note that certain data may be retained for legal or
+            operational reasons, as specified in our{' '}
+            <a href="/privacy-policy" className="underline">
+              Privacy Policy
+            </a>
+            .
+          </p>
+        </div>
       </div>
     </div>
   )

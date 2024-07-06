@@ -54,7 +54,7 @@ export function ContactForm({ className, ...props }: ContactFormProps) {
             </Label>
             <Textarea
               name="message"
-              placeholder="Please type your message here"
+              placeholder="Please type your message here. If you are requesting account deletion, please specify the details."
               required
             />
           </div>
