@@ -1,5 +1,6 @@
 import {
   AlertTriangle,
+  AlignJustify,
   ArrowRight,
   Check,
   ChevronLeft,
@@ -49,6 +50,7 @@ export const Icons = {
   help: HelpCircle,
   pizza: Pizza,
   sun: SunMedium,
+  menu: AlignJustify,
   moon: Moon,
   laptop: Laptop,
   contact: Send,
